@@ -1,5 +1,8 @@
 package stepDefinition;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,6 +13,7 @@ public class mynewFeatureSteps {
 	public void user_opens_firefox() {
 
 		System.out.println("Firefox Opened");
+		WebDriver driver=new ChromeDriver();
 	}
 
 	@When("user enters to url {string}")

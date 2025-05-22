@@ -1,11 +1,10 @@
 package testRunnr;
 
-import org.junit.runner.RunWith;
+import org.testng.annotations.DataProvider;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-//failsafe
-@RunWith(Cucumber.class)
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+
 @CucumberOptions(
 		features="./Features/anotherFeature.feature",
 		glue="stepDefinition",
@@ -19,6 +18,15 @@ import io.cucumber.junit.CucumberOptions;
 		)
 
 
-public class TestRunner {
+public class TestRunner extends AbstractTestNGCucumberTests{
+
+	@Override
+	@DataProvider(parallel=false)
+	public Object[][] scenarios() {
+		// TODO Auto-generated method stub
+		return super.scenarios();
+	}
+
+
 
 }
